@@ -1,3 +1,16 @@
 {
-	"name": "GridModule"
+    "name": "GridModule",
+    "rootNamespace": "",
+    "references": [
+        "GUID:058afef1bc582fa479b1fe34a552710b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

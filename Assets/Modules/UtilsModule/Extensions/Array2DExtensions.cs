@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Modules.GridModule
+namespace Modules.UtilsModule.Extensions
 {
     public static class Array2DExtensions
     {
