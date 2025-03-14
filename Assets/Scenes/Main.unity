@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 677217374}
   - component: {fileID: 677217373}
   m_Layer: 0
-  m_Name: Pointer
+  m_Name: CurrentCellPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 1999830771}
   - component: {fileID: 1999830770}
   m_Layer: 0
-  m_Name: Test
+  m_Name: GridDebugger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,8 +573,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gridConfig: {fileID: 11400000, guid: 7f9bc0564dc9a7741bd0a62c7649927d, type: 2}
   _cellPrefab: {fileID: 6175181571210452056, guid: 061fab4f5f664f44dbfcb7fa9104104e, type: 3}
+  _pointer: {fileID: 677217372}
   _camera: {fileID: 519420031}
-  _circle: {fileID: 677217372}
   _cellContainer: {fileID: 1999830771}
 --- !u!4 &1999830771
 Transform:

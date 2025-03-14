@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b0a664eb1649b5b1aab4b65191e67b, type: 3}
   m_Name: GridConfig
   m_EditorClassIdentifier: 
-  <GridSize>k__BackingField: {x: 10, y: 10}
+  <GridSize>k__BackingField: {x: 32, y: 18}
   <GridPosition>k__BackingField: {x: 0, y: 0}
   <CellLength>k__BackingField: 1

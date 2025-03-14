@@ -5,7 +5,7 @@ using Grid = Modules.GridModule.Grid;
 
 namespace BuildingSim
 {
-    public class Test : MonoBehaviour
+    public class GridDebugger : MonoBehaviour
     {
         [SerializeField]
         private GridConfig _gridConfig;
@@ -14,10 +14,10 @@ namespace BuildingSim
         private GameObject _cellPrefab;
 
         [SerializeField]
-        private Camera _camera;
+        private GameObject _pointer;
 
         [SerializeField]
-        private GameObject _circle;
+        private Camera _camera;
 
         [SerializeField]
         private Transform _cellContainer;
@@ -38,6 +38,7 @@ namespace BuildingSim
             {
                 var cellObject = Instantiate(_cellPrefab, _cellContainer);
                 cellObject.transform.localPosition = cell.WorldPosition;
+                cellObject.transform.localScale = new Vector3(_gridConfig.CellLength, _gridConfig.CellLength);
             }
         }
 
@@ -45,7 +46,7 @@ namespace BuildingSim
         {
             var position = _camera.ScreenToWorldPoint(_controls.Building.MousePosition.ReadValue<Vector2>());
             var cell = _grid.GetClosestCell(position);
-            _circle.transform.localPosition = cell.WorldPosition;
+            _pointer.transform.localPosition = cell.WorldPosition;
             Debug.Log($"closest: {cell}");
         }
     }
