@@ -7,7 +7,7 @@ namespace BuildingSim.Bootstrap
     {
         private void Start()
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene(1);
         }
     }
 }
