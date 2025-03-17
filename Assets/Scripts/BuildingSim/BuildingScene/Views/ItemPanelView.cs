@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace BuildingSim.BuildingScene.Views
 {
@@ -6,5 +7,11 @@ namespace BuildingSim.BuildingScene.Views
     {
         [field: SerializeField]
         public ItemView[] Items { get; private set; }
+
+        [field: SerializeField]
+        public Button PlaceButton { get; private set; }
+
+        [field: SerializeField]
+        public Button RemoveButton { get; private set; }
     }
 }

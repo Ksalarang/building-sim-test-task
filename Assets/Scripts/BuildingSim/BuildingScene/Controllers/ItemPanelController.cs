@@ -1,19 +1,24 @@
 ﻿using System;
 using System.Linq;
 using BuildingSim.BuildingScene.Configs;
+using BuildingSim.BuildingScene.Items;
 using BuildingSim.BuildingScene.Views;
 using VContainer;
 using VContainer.Unity;
 
 namespace BuildingSim.BuildingScene.Controllers
 {
-    public class ItemPanelController : IInitializable, IDisposable
+    public class ItemPanelController : IItemPanelController, IInitializable, IDisposable
     {
+        public BuildableItemType SelectedItemType => _selectedItemType;
+
         [Inject]
         private readonly ItemPanelView _view;
 
         [Inject]
         private readonly ItemViewsConfig _itemViewsConfig;
+
+        private BuildableItemType _selectedItemType;
 
         public void Initialize()
         {
@@ -23,7 +28,9 @@ namespace BuildingSim.BuildingScene.Controllers
                 item.Button.onClick.AddListener(() => OnItemClick(item));
             }
 
-            _view.Items.First().Frame.gameObject.SetActive(true);
+            var first = _view.Items.First();
+            first.Frame.gameObject.SetActive(true);
+            _selectedItemType = first.Type;
         }
 
         public void Dispose()
@@ -38,7 +45,13 @@ namespace BuildingSim.BuildingScene.Controllers
         {
             foreach (var item in _view.Items)
             {
-                item.Frame.gameObject.SetActive(item == itemView);
+                var selected = item == itemView;
+                item.Frame.gameObject.SetActive(selected);
+
+                if (selected)
+                {
+                    _selectedItemType = item.Type;
+                }
             }
         }
     }

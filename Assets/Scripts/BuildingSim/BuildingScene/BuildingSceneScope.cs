@@ -1,14 +1,32 @@
 ﻿using BuildingSim.BuildingScene.Configs;
 using BuildingSim.BuildingScene.Controllers;
 using BuildingSim.BuildingScene.Views;
+using BuildingSim.Input;
+using Modules.GridModule;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using VContainer;
 using VContainer.Unity;
+using Grid = Modules.GridModule.Grid;
 
 namespace BuildingSim.BuildingScene
 {
     public class BuildingSceneScope : LifetimeScope
     {
+        [Header("Scene objects")]
+        [SerializeField]
+        private Camera _camera;
+
+        [SerializeField]
+        private GraphicRaycaster _graphicRaycaster;
+
+        [SerializeField]
+        private EventSystem _eventSystem;
+
+        [SerializeField]
+        private MouseInputHandler _mouseInputHandler;
+
         [Header("Views")]
         [SerializeField]
         private ItemPanelView _itemPanelView;
@@ -17,13 +35,29 @@ namespace BuildingSim.BuildingScene
         [SerializeField]
         private ItemViewsConfig _itemViewsConfig;
 
+        [SerializeField]
+        private BuildableItemsConfig _buildableItemsConfig;
+
+        [SerializeField]
+        private GridConfig _gridConfig;
+
         protected override void Configure(IContainerBuilder builder)
         {
+            builder.RegisterInstance(_camera);
+            builder.RegisterInstance(_graphicRaycaster);
+            builder.RegisterInstance(_eventSystem);
+            builder.RegisterInstance(_mouseInputHandler).As<IMouseInput>();
+
             builder.RegisterInstance(_itemPanelView);
 
             builder.RegisterInstance(_itemViewsConfig);
+            builder.RegisterInstance(_buildableItemsConfig);
+            builder.RegisterInstance(_gridConfig);
 
-            builder.RegisterEntryPoint<ItemPanelController>();
+            builder.Register<ItemPanelController>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<Grid>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterEntryPoint<ItemPlacer>();
+            builder.RegisterEntryPoint<ItemGrid>();
         }
     }
 }

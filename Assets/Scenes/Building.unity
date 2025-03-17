@@ -756,6 +756,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1999830771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &704616453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 704616455}
+  - component: {fileID: 704616454}
+  m_Layer: 0
+  m_Name: Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &704616454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704616453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4b8321dd804e03954b4d305153772d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &704616455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704616453}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &751394366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1099,8 @@ MonoBehaviour:
   - {fileID: 2829227457960241896}
   - {fileID: 763593785}
   - {fileID: 1847559262}
+  <PlaceButton>k__BackingField: {fileID: 441026260}
+  <RemoveButton>k__BackingField: {fileID: 1172938880}
 --- !u!1 &1081973697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,9 +1370,16 @@ MonoBehaviour:
   parentReference:
     TypeName: 
   autoRun: 1
-  autoInjectGameObjects: []
+  autoInjectGameObjects:
+  - {fileID: 704616453}
+  _camera: {fileID: 519420031}
+  _graphicRaycaster: {fileID: 2105073183}
+  _eventSystem: {fileID: 1732758307}
+  _mouseInputHandler: {fileID: 704616454}
   _itemPanelView: {fileID: 925586874}
   _itemViewsConfig: {fileID: 11400000, guid: 5ea528a4a8cf3514ca184fb20f528dde, type: 2}
+  _buildableItemsConfig: {fileID: 11400000, guid: c5b56b9d65254a0438f034a96b64bbb5, type: 2}
+  _gridConfig: {fileID: 11400000, guid: 7f9bc0564dc9a7741bd0a62c7649927d, type: 2}
 --- !u!4 &1186434011
 Transform:
   m_ObjectHideFlags: 0
@@ -1683,8 +1736,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1825,3 +1878,4 @@ SceneRoots:
   - {fileID: 1999830771}
   - {fileID: 2105073186}
   - {fileID: 1732758308}
+  - {fileID: 704616455}
