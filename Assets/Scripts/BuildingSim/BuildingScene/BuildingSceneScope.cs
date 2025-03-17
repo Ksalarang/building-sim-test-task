@@ -36,7 +36,7 @@ namespace BuildingSim.BuildingScene
         private ItemViewsConfig _itemViewsConfig;
 
         [SerializeField]
-        private BuildableItemsConfig _buildableItemsConfig;
+        private ItemBuildingConfig _itemBuildingConfig;
 
         [SerializeField]
         private GridConfig _gridConfig;
@@ -51,7 +51,7 @@ namespace BuildingSim.BuildingScene
             builder.RegisterInstance(_itemPanelView);
 
             builder.RegisterInstance(_itemViewsConfig);
-            builder.RegisterInstance(_buildableItemsConfig);
+            builder.RegisterInstance(_itemBuildingConfig);
             builder.RegisterInstance(_gridConfig);
 
             builder.Register<ItemPanelController>(Lifetime.Singleton).AsImplementedInterfaces();

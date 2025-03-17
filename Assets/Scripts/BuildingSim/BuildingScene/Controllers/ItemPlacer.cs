@@ -3,6 +3,7 @@ using BuildingSim.BuildingScene.Configs;
 using BuildingSim.BuildingScene.Items;
 using BuildingSim.BuildingScene.Views;
 using BuildingSim.Input;
+using Modules.UtilsModule.Extensions;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -19,7 +20,7 @@ namespace BuildingSim.BuildingScene.Controllers
         private readonly IItemPanelController _itemPanelController;
 
         [Inject]
-        private readonly BuildableItemsConfig _buildableItemsConfig;
+        private readonly ItemBuildingConfig _itemBuildingConfig;
 
         [Inject]
         private readonly IMouseInput _mouseInput;
@@ -59,7 +60,8 @@ namespace BuildingSim.BuildingScene.Controllers
             }
 
             var selectedType = _itemPanelController.SelectedItemType;
-            _currentItem = Object.Instantiate(_buildableItemsConfig.GetItem(selectedType));
+            _currentItem = Object.Instantiate(_itemBuildingConfig.GetItem(selectedType));
+            _currentItem.Renderer.SetAlpha(_itemBuildingConfig.PrePlacedItemAlpha);
             _currentItem.transform.position = _itemGrid.GetPositionClosestTo(_mouseInput.Position);
         }
 
@@ -72,6 +74,7 @@ namespace BuildingSim.BuildingScene.Controllers
 
             if (_itemGrid.PlaceItem(_currentItem))
             {
+                _currentItem.Renderer.SetAlpha(1f);
                 _currentItem = null;
             }
         }

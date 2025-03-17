@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace BuildingSim.BuildingScene.Configs
 {
-    [CreateAssetMenu(fileName = "BuildableItemsConfig", menuName = "Configs/BuildableItemsConfig", order = 0)]
-    public class BuildableItemsConfig : ScriptableObject
+    [CreateAssetMenu(fileName = "ItemBuildingConfig", menuName = "Configs/ItemBuildingConfig", order = 0)]
+    public class ItemBuildingConfig : ScriptableObject
     {
         [field: SerializeField]
         public BuildableItem[] Prefabs { get; private set; }
+
+        [field: SerializeField, Tooltip("Transparency of the item that is being placed")]
+        public float PrePlacedItemAlpha { get; private set; }
 
         public BuildableItem GetItem(BuildableItemType type)
         {

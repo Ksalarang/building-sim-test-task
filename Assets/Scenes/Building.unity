@@ -1378,7 +1378,7 @@ MonoBehaviour:
   _mouseInputHandler: {fileID: 704616454}
   _itemPanelView: {fileID: 925586874}
   _itemViewsConfig: {fileID: 11400000, guid: 5ea528a4a8cf3514ca184fb20f528dde, type: 2}
-  _buildableItemsConfig: {fileID: 11400000, guid: c5b56b9d65254a0438f034a96b64bbb5, type: 2}
+  _itemBuildingConfig: {fileID: 11400000, guid: c5b56b9d65254a0438f034a96b64bbb5, type: 2}
   _gridConfig: {fileID: 11400000, guid: 7f9bc0564dc9a7741bd0a62c7649927d, type: 2}
 --- !u!4 &1186434011
 Transform:
@@ -1737,7 +1737,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
