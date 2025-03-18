@@ -9,6 +9,12 @@ namespace BuildingSim.BuildingScene.Items
 
         [field: SerializeField]
         public SpriteRenderer Renderer { get; private set; }
+
+        [field: SerializeField]
+        public Collider2D Collider { get; private set; }
+
+        [field: SerializeField]
+        public Vector2Int GridSize { get; private set; }
     }
 
     public enum BuildableItemType

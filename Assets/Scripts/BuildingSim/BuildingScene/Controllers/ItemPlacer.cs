@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using BuildingSim.BuildingScene.Configs;
 using BuildingSim.BuildingScene.Items;
 using BuildingSim.BuildingScene.Views;

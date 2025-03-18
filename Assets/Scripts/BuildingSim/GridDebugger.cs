@@ -47,7 +47,6 @@ namespace BuildingSim
             var position = _camera.ScreenToWorldPoint(_controls.Building.MousePosition.ReadValue<Vector2>());
             var cell = _grid.GetClosestCell(position);
             _pointer.transform.localPosition = cell.WorldPosition;
-            Debug.Log($"closest: {cell}");
         }
     }
 }

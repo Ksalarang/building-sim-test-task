@@ -40,6 +40,11 @@ namespace Modules.GridModule
             return list;
         }
 
+        public Cell GetCell(int x, int y)
+        {
+            return _cells[x, y];
+        }
+
         private void CreateCells()
         {
             var halfCellLength = _gridConfig.CellLength / 2;

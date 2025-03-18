@@ -145,3 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 0
   <Renderer>k__BackingField: {fileID: 1146792874863237841}
+  <Collider>k__BackingField: {fileID: 3992938751579927100}
+  <GridSize>k__BackingField: {x: 6, y: 6}

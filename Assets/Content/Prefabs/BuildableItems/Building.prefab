@@ -12,9 +12,17 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5399470248884756179, guid: 95b212fcc0622814b8f9567dc8e89efd, type: 3}
+      propertyPath: <GridSize>k__BackingField.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399470248884756179, guid: 95b212fcc0622814b8f9567dc8e89efd, type: 3}
+      propertyPath: <GridSize>k__BackingField.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6698492718482667886, guid: 95b212fcc0622814b8f9567dc8e89efd, type: 3}
       propertyPath: m_Name
-      value: Building Variant
+      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: 7646225980187514573, guid: 95b212fcc0622814b8f9567dc8e89efd, type: 3}
       propertyPath: m_LocalPosition.x
