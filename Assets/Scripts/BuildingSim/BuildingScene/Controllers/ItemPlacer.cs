@@ -77,19 +77,6 @@ namespace BuildingSim.BuildingScene.Controllers
             CreateNewItem(_itemPanelController.SelectedItemType);
         }
 
-        private void CreateNewItem(BuildableItemType type)
-        {
-            _currentItem = Object.Instantiate(_itemBuildingConfig.GetItem(type));
-            _currentItem.Renderer.SetAlpha(_itemBuildingConfig.PrePlacedItemAlpha);
-            _currentItem.transform.position = _itemGrid.GetPositionClosestTo(_mouseInput.Position);
-        }
-
-        private void DestroyCurrentItem()
-        {
-            Object.Destroy(_currentItem.gameObject);
-            _currentItem = null;
-        }
-
         private void OnRemoveButtonClick()
         {
             if (_currentItem is null)
@@ -124,8 +111,21 @@ namespace BuildingSim.BuildingScene.Controllers
             if (_itemGrid.PlaceItem(_currentItem))
             {
                 _currentItem.Renderer.SetAlpha(1f);
-                _currentItem = null;
+                CreateNewItem(_itemPanelController.SelectedItemType);
             }
+        }
+
+        private void CreateNewItem(BuildableItemType type)
+        {
+            _currentItem = Object.Instantiate(_itemBuildingConfig.GetItem(type));
+            _currentItem.Renderer.SetAlpha(_itemBuildingConfig.PrePlacedItemAlpha);
+            _currentItem.transform.position = _itemGrid.GetPositionClosestTo(_mouseInput.Position);
+        }
+
+        private void DestroyCurrentItem()
+        {
+            Object.Destroy(_currentItem.gameObject);
+            _currentItem = null;
         }
     }
 }
