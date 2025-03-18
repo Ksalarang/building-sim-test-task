@@ -1188,13 +1188,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccc34ab3dab4d5d840c6736c55df9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <RectTransform>k__BackingField: {fileID: 925586873}
+  <Frame>k__BackingField: {fileID: 682175616}
   <Items>k__BackingField:
   - {fileID: 2829227457960241896}
   - {fileID: 763593785}
   - {fileID: 1847559262}
   <PlaceButton>k__BackingField: {fileID: 441026260}
   <RemoveButton>k__BackingField: {fileID: 1172938880}
-  <Frame>k__BackingField: {fileID: 682175616}
 --- !u!1 &1081973697
 GameObject:
   m_ObjectHideFlags: 0

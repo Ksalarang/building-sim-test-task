@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using BuildingSim.BuildingScene.Configs;
 using BuildingSim.BuildingScene.Items;
 using BuildingSim.BuildingScene.Views;
@@ -27,6 +28,9 @@ namespace BuildingSim.BuildingScene.Controllers
 
         [Inject]
         private readonly IItemGrid _itemGrid;
+
+        [Inject]
+        private readonly Camera _camera;
 
         private BuildableItem _currentItem;
 
@@ -108,7 +112,7 @@ namespace BuildingSim.BuildingScene.Controllers
                 return;
             }
 
-            if (_itemGrid.PlaceItem(_currentItem))
+            if (ItemOverlapsUi(_currentItem) == false && _itemGrid.PlaceItem(_currentItem))
             {
                 _currentItem.Renderer.SetAlpha(1f);
                 CreateNewItem(_itemPanelController.SelectedItemType);
@@ -126,6 +130,22 @@ namespace BuildingSim.BuildingScene.Controllers
         {
             Object.Destroy(_currentItem.gameObject);
             _currentItem = null;
+        }
+
+        private bool ItemOverlapsUi(BuildableItem item)
+        {
+            var spriteBounds = new Bounds(item.transform.position, item.Renderer.bounds.size);
+            var spriteMin = _camera.WorldToScreenPoint(spriteBounds.min);
+            var spriteMax = _camera.WorldToScreenPoint(spriteBounds.max);
+            var spriteRect = new Rect(spriteMin, spriteMax - spriteMin);
+
+            var corners = new Vector3[4];
+            _itemPanelView.RectTransform.GetWorldCorners(corners);
+            // corner values are in screen coordinates because the canvas is set to overlay
+            // so no world-to-screen conversion is needed
+            var uiRect = new Rect(corners[0], corners[2] - corners[0]);
+
+            return spriteRect.Overlaps(uiRect);
         }
     }
 }
