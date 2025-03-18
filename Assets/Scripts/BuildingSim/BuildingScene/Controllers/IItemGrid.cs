@@ -8,5 +8,7 @@ namespace BuildingSim.BuildingScene.Controllers
         Vector3 GetPositionClosestTo(Vector3 position);
 
         bool PlaceItem(BuildableItem item);
+
+        bool RemoveItem(BuildableItem item);
     }
 }

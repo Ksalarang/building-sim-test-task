@@ -1,5 +1,6 @@
 ﻿using BuildingSim.BuildingScene.Items;
 using Modules.GridModule;
+using Modules.UtilsModule.Extensions;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -38,6 +39,17 @@ namespace BuildingSim.BuildingScene.Controllers
 
             _items[cell.GridPosition.x, cell.GridPosition.y] = placedItem;
             return true;
+        }
+
+        public bool RemoveItem(BuildableItem itemToRemove)
+        {
+            if (_items.IndicesOf(itemToRemove, out var indices))
+            {
+                _items[indices.x, indices.y] = null;
+                return true;
+            }
+
+            return false;
         }
     }
 }

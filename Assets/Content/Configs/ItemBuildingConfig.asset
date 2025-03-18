@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemBuildingConfig
   m_EditorClassIdentifier: 
   <Prefabs>k__BackingField:
-  - {fileID: 8885424800622773339, guid: 5d1befcf8c82f2748b939b97c5e987b8, type: 3}
-  - {fileID: 7716038175996459536, guid: a161476e67967f34ba632b9aea7d77bb, type: 3}
-  - {fileID: 7058866586089586730, guid: c602afb0bc30c7840adf7d7dfea55657, type: 3}
+  - {fileID: 9147987357267656121, guid: 95c8ac4e26a421e4896a1b57593d6e6c, type: 3}
+  - {fileID: 1287105408453475107, guid: 7929da5129b6442428aef71ac6142d00, type: 3}
+  - {fileID: 8226611524929288661, guid: 137ef3fc67941a249bcce91bb511d490, type: 3}
   <PrePlacedItemAlpha>k__BackingField: 0.5
