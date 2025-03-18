@@ -39,6 +39,7 @@ namespace BuildingSim.BuildingScene.Controllers
         private void OnRemoveButtonClick()
         {
             _removing = true;
+            _itemPanelView.Frame.color = Color.red;
         }
 
         private void OnPlaceButtonClick()

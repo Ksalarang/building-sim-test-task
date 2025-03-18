@@ -73,6 +73,7 @@ namespace BuildingSim.BuildingScene.Controllers
                 return;
             }
 
+            _itemPanelView.Frame.color = Color.green;
             CreateNewItem(_itemPanelController.SelectedItemType);
         }
 

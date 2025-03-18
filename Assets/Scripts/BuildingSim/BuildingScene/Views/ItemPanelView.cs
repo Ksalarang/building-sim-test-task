@@ -13,5 +13,8 @@ namespace BuildingSim.BuildingScene.Views
 
         [field: SerializeField]
         public Button RemoveButton { get; private set; }
+
+        [field: SerializeField]
+        public Image Frame { get; private set; }
     }
 }
