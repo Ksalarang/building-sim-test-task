@@ -1,11 +1,12 @@
 ﻿using System;
 using Modules.GridModule;
+using Modules.GridModule.Runtime;
 using Modules.UIModule.Runtime.Views;
 using Modules.UtilsModule.Extensions;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using Grid = Modules.GridModule.Grid;
+using Grid = Modules.GridModule.Runtime.Grid;
 
 namespace BuildingSim.BuildingScene.Controllers
 {

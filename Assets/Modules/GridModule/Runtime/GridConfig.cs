@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Modules.GridModule
+namespace Modules.GridModule.Runtime
 {
     [CreateAssetMenu(fileName = "GridConfig", menuName = "Modules/GridModule/GridConfig", order = 0)]
     public class GridConfig : ScriptableObject
