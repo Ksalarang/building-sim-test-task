@@ -6,7 +6,7 @@ using VContainer;
 using VContainer.Unity;
 using Object = UnityEngine.Object;
 
-namespace BuildingSim.BuildingScene.Controllers
+namespace Modules.ItemHandling.Runtime
 {
     public class ItemRemover : IInitializable, IDisposable
     {
@@ -17,7 +17,7 @@ namespace BuildingSim.BuildingScene.Controllers
         private readonly IMouseInput _mouseInput;
 
         [Inject]
-        private readonly IItemGrid _itemGrid;
+        private readonly ItemGrid _itemGrid;
 
         private bool _removing;
 
@@ -57,8 +57,10 @@ namespace BuildingSim.BuildingScene.Controllers
 
             if (hit.collider && hit.collider.TryGetComponent(out BuildableItem item))
             {
-                _itemGrid.RemoveItem(item);
-                Object.Destroy(item.gameObject);
+                if (_itemGrid.RemoveItem(item))
+                {
+                    Object.Destroy(item.gameObject);
+                }
             }
         }
     }

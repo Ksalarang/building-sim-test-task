@@ -9,7 +9,7 @@ using VContainer;
 using VContainer.Unity;
 using Object = UnityEngine.Object;
 
-namespace BuildingSim.BuildingScene.Controllers
+namespace Modules.ItemHandling.Runtime
 {
     public class ItemPlacer : IInitializable, IDisposable, ITickable
     {
@@ -26,7 +26,7 @@ namespace BuildingSim.BuildingScene.Controllers
         private readonly IMouseInput _mouseInput;
 
         [Inject]
-        private readonly IItemGrid _itemGrid;
+        private readonly ItemGrid _itemGrid;
 
         [Inject]
         private readonly Camera _camera;

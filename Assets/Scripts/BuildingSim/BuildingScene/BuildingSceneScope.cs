@@ -1,6 +1,6 @@
-﻿using BuildingSim.BuildingScene.Controllers;
-using Modules.GridModule.Runtime;
+﻿using Modules.GridModule.Runtime;
 using Modules.InputModule.Runtime;
+using Modules.ItemHandling.Runtime;
 using Modules.UIModule.Runtime.Configs;
 using Modules.UIModule.Runtime.Controllers;
 using Modules.UIModule.Runtime.Views;
@@ -57,9 +57,9 @@ namespace BuildingSim.BuildingScene
 
             builder.Register<ItemPanelController>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<Grid>(Lifetime.Singleton);
+            builder.Register<ItemGrid>(Lifetime.Singleton);
             builder.RegisterEntryPoint<ItemPlacer>();
             builder.RegisterEntryPoint<ItemRemover>();
-            builder.RegisterEntryPoint<ItemGrid>();
         }
     }
 }

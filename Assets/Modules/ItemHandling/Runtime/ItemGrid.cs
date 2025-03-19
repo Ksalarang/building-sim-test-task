@@ -1,28 +1,21 @@
 ﻿using System;
-using Modules.GridModule;
 using Modules.GridModule.Runtime;
 using Modules.UIModule.Runtime.Views;
 using Modules.UtilsModule.Runtime.Extensions;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 using Grid = Modules.GridModule.Runtime.Grid;
 
-namespace BuildingSim.BuildingScene.Controllers
+namespace Modules.ItemHandling.Runtime
 {
-    public class ItemGrid : IItemGrid, IInitializable
+    public class ItemGrid
     {
-        [Inject]
         private readonly Grid _grid;
+        private readonly ItemCell[,] _itemCells;
 
-        [Inject]
-        private readonly GridConfig _gridConfig;
-
-        private ItemCell[,] _itemCells;
-
-        public void Initialize()
+        public ItemGrid(Grid grid, GridConfig gridConfig)
         {
-            _itemCells = new ItemCell[_gridConfig.GridSize.x, _gridConfig.GridSize.y];
+            _grid = grid;
+            _itemCells = new ItemCell[gridConfig.GridSize.x, gridConfig.GridSize.y];
         }
 
         public Vector3 GetPositionClosestTo(Vector3 position)
@@ -32,29 +25,30 @@ namespace BuildingSim.BuildingScene.Controllers
 
         public bool PlaceItem(BuildableItem placedItem)
         {
-            var cell = _grid.GetClosestCell(placedItem.transform.position);
-            var itemCell = GetCell(cell.GridPosition.x, cell.GridPosition.y);
+            var closestPosition = _grid.GetClosestCell(placedItem.transform.position).GridPosition;
+            var itemCell = GetCell(closestPosition.x, closestPosition.y);
 
-            if (Overlaps(placedItem, itemCell))
+            if (ItemsOverlap(placedItem, itemCell))
             {
                 return false;
             }
 
-            ForEachCell(itemCell, placedItem.GridSize, cell =>
+            ForEachNeighborCell(itemCell, placedItem.GridSize, cell =>
             {
                 cell.Item = placedItem;
                 cell.Center = itemCell;
             });
+
             return true;
         }
 
-        public bool RemoveItem(BuildableItem itemToRemove)
+        public bool RemoveItem(BuildableItem item)
         {
             ItemCell centralCell = null;
 
             _itemCells.ForEach(cell =>
             {
-                if (cell != null && cell.Item == itemToRemove)
+                if (cell != null && cell.Item == item)
                 {
                     centralCell = cell.Center;
                 }
@@ -65,19 +59,20 @@ namespace BuildingSim.BuildingScene.Controllers
                 return false;
             }
 
-            ForEachCell(centralCell, itemToRemove.GridSize, cell =>
+            ForEachNeighborCell(centralCell, item.GridSize, cell =>
             {
                 cell.Item = null;
                 cell.Center = null;
             });
+
             return true;
         }
 
-        private bool Overlaps(BuildableItem item, ItemCell itemCell)
+        private bool ItemsOverlap(BuildableItem item, ItemCell itemCell)
         {
             var overlaps = false;
 
-            ForEachCell(itemCell, item.GridSize, cell =>
+            ForEachNeighborCell(itemCell, item.GridSize, cell =>
             {
                 if (cell.Item is not null)
                 {
@@ -88,7 +83,7 @@ namespace BuildingSim.BuildingScene.Controllers
             return overlaps;
         }
 
-        private void ForEachCell(ItemCell centralCell, Vector2Int itemGridSize, Action<ItemCell> action)
+        private void ForEachNeighborCell(ItemCell centralCell, Vector2Int itemGridSize, Action<ItemCell> action)
         {
             var startX = centralCell.X - itemGridSize.x / 2;
             var startY = centralCell.Y - itemGridSize.y / 2;
