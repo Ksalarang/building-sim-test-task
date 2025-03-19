@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Modules.GridModule.Runtime
+namespace Modules.Grids.Runtime
 {
     public readonly struct Cell
     {

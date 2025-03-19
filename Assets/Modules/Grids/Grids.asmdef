@@ -1,5 +1,5 @@
 {
-    "name": "GridModule",
+    "name": "Grids",
     "rootNamespace": "",
     "references": [
         "GUID:058afef1bc582fa479b1fe34a552710b"

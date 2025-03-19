@@ -1,8 +1,8 @@
-﻿using Modules.GridModule.Runtime;
+﻿using Modules.Grids.Runtime;
 using Modules.InputModule.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Grid = Modules.GridModule.Runtime.Grid;
+using Grid = Modules.Grids.Runtime.Grid;
 
 namespace BuildingSim
 {

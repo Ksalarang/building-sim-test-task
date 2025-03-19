@@ -1,9 +1,9 @@
 ﻿using System;
-using Modules.GridModule.Runtime;
+using Modules.Grids.Runtime;
 using Modules.UIModule.Runtime.Views;
 using Modules.UtilsModule.Runtime.Extensions;
 using UnityEngine;
-using Grid = Modules.GridModule.Runtime.Grid;
+using Grid = Modules.Grids.Runtime.Grid;
 
 namespace Modules.ItemHandling.Runtime
 {

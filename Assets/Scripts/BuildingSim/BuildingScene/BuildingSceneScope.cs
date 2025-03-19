@@ -1,4 +1,4 @@
-﻿using Modules.GridModule.Runtime;
+﻿using Modules.Grids.Runtime;
 using Modules.InputModule.Runtime;
 using Modules.ItemHandling.Runtime;
 using Modules.UIModule.Runtime.Configs;
@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using VContainer;
 using VContainer.Unity;
-using Grid = Modules.GridModule.Runtime.Grid;
+using Grid = Modules.Grids.Runtime.Grid;
 
 namespace BuildingSim.BuildingScene
 {

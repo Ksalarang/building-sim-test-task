@@ -2,7 +2,7 @@
 using Modules.UtilsModule.Runtime.Extensions;
 using UnityEngine;
 
-namespace Modules.GridModule.Runtime
+namespace Modules.Grids.Runtime
 {
     public class Grid
     {
