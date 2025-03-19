@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using Modules.UIModule.Runtime.Views;
+using Modules.UI.Runtime.Views;
 using UnityEngine;
 
-namespace Modules.UIModule.Runtime.Configs
+namespace Modules.UI.Runtime.Configs
 {
     [CreateAssetMenu(fileName = "ItemViewsConfig", menuName = "Modules/UIModule/ItemViewsConfig", order = 0)]
     public class ItemViewsConfig : ScriptableObject

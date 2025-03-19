@@ -1,6 +1,6 @@
-﻿using Modules.UIModule.Runtime.Views;
+﻿using Modules.UI.Runtime.Views;
 
-namespace Modules.UIModule.Runtime.Controllers
+namespace Modules.UI.Runtime.Controllers
 {
     public interface IItemPanelController
     {

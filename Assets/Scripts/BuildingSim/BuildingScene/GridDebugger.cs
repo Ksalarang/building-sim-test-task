@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Grid = Modules.Grids.Runtime.Grid;
 
-namespace BuildingSim
+namespace BuildingSim.BuildingScene
 {
     public class GridDebugger : MonoBehaviour
     {

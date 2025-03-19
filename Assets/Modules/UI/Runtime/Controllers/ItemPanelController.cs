@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
-using Modules.UIModule.Runtime.Configs;
-using Modules.UIModule.Runtime.Views;
+using Modules.UI.Runtime.Configs;
+using Modules.UI.Runtime.Views;
 using VContainer;
 using VContainer.Unity;
 
-namespace Modules.UIModule.Runtime.Controllers
+namespace Modules.UI.Runtime.Controllers
 {
     public class ItemPanelController : IItemPanelController, IInitializable, IDisposable
     {

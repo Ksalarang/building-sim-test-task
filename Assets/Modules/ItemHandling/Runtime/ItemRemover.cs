@@ -1,5 +1,5 @@
 ﻿using System;
-using Modules.UIModule.Runtime.Views;
+using Modules.UI.Runtime.Views;
 using Modules.UserInput.Runtime;
 using UnityEngine;
 using VContainer;

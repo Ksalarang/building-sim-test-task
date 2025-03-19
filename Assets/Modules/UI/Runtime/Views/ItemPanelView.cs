@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Modules.UIModule.Runtime.Views
+namespace Modules.UI.Runtime.Views
 {
     public class ItemPanelView : MonoBehaviour
     {

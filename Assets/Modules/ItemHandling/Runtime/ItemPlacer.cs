@@ -1,7 +1,7 @@
 ﻿using System;
-using Modules.UIModule.Runtime.Configs;
-using Modules.UIModule.Runtime.Controllers;
-using Modules.UIModule.Runtime.Views;
+using Modules.UI.Runtime.Configs;
+using Modules.UI.Runtime.Controllers;
+using Modules.UI.Runtime.Views;
 using Modules.UserInput.Runtime;
 using Modules.UtilsModule.Runtime.Extensions;
 using UnityEngine;

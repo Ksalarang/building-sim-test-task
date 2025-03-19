@@ -1,8 +1,8 @@
 ﻿using Modules.Grids.Runtime;
 using Modules.ItemHandling.Runtime;
-using Modules.UIModule.Runtime.Configs;
-using Modules.UIModule.Runtime.Controllers;
-using Modules.UIModule.Runtime.Views;
+using Modules.UI.Runtime.Configs;
+using Modules.UI.Runtime.Controllers;
+using Modules.UI.Runtime.Views;
 using Modules.UserInput.Runtime;
 using UnityEngine;
 using UnityEngine.EventSystems;
