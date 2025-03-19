@@ -5,13 +5,14 @@ using Modules.UtilsModule.Extensions;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using Grid = Modules.GridModule.Grid;
 
 namespace BuildingSim.BuildingScene.Controllers
 {
     public class ItemGrid : IItemGrid, IInitializable
     {
         [Inject]
-        private readonly IGrid _grid;
+        private readonly Grid _grid;
 
         [Inject]
         private readonly GridConfig _gridConfig;

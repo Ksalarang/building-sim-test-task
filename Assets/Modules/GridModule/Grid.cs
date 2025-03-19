@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Modules.GridModule
 {
-    public class Grid : IGrid
+    public class Grid
     {
         private readonly GridConfig _gridConfig;
         private readonly Cell[,] _cells;

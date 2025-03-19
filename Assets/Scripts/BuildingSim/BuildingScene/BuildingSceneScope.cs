@@ -55,7 +55,7 @@ namespace BuildingSim.BuildingScene
             builder.RegisterInstance(_gridConfig);
 
             builder.Register<ItemPanelController>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<Grid>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<Grid>(Lifetime.Singleton);
             builder.RegisterEntryPoint<ItemPlacer>();
             builder.RegisterEntryPoint<ItemRemover>();
             builder.RegisterEntryPoint<ItemGrid>();
