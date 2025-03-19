@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Modules.UtilsModule.Extensions;
+using Modules.UtilsModule.Runtime.Extensions;
 using UnityEngine;
 
 namespace Modules.GridModule.Runtime

@@ -3,7 +3,7 @@ using Modules.InputModule.Runtime;
 using Modules.UIModule.Runtime.Configs;
 using Modules.UIModule.Runtime.Controllers;
 using Modules.UIModule.Runtime.Views;
-using Modules.UtilsModule.Extensions;
+using Modules.UtilsModule.Runtime.Extensions;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;

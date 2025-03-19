@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Modules.UtilsModule.Extensions
+namespace Modules.UtilsModule.Runtime.Extensions
 {
     public static class Array2DExtensions
     {

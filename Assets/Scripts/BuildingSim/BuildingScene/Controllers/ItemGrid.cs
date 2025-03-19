@@ -2,7 +2,7 @@
 using Modules.GridModule;
 using Modules.GridModule.Runtime;
 using Modules.UIModule.Runtime.Views;
-using Modules.UtilsModule.Extensions;
+using Modules.UtilsModule.Runtime.Extensions;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
