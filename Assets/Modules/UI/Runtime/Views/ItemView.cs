@@ -1,4 +1,4 @@
-﻿using Modules.UtilsModule.Runtime.Extensions;
+﻿using Modules.Utils.Runtime.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 

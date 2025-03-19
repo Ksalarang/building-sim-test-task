@@ -1,7 +1,7 @@
 ﻿using System;
 using Modules.Grids.Runtime;
 using Modules.UI.Runtime.Views;
-using Modules.UtilsModule.Runtime.Extensions;
+using Modules.Utils.Runtime.Extensions;
 using UnityEngine;
 using Grid = Modules.Grids.Runtime.Grid;
 
