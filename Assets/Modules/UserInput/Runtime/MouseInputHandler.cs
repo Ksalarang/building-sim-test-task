@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using VContainer;
 
-namespace Modules.InputModule.Runtime
+namespace Modules.UserInput.Runtime
 {
     public class MouseInputHandler : MonoBehaviour, IMouseInput
     {

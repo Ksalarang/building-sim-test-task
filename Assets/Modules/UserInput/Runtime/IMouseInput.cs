@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Modules.InputModule.Runtime
+namespace Modules.UserInput.Runtime
 {
     public interface IMouseInput
     {

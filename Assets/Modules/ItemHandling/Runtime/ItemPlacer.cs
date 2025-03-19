@@ -1,8 +1,8 @@
 ﻿using System;
-using Modules.InputModule.Runtime;
 using Modules.UIModule.Runtime.Configs;
 using Modules.UIModule.Runtime.Controllers;
 using Modules.UIModule.Runtime.Views;
+using Modules.UserInput.Runtime;
 using Modules.UtilsModule.Runtime.Extensions;
 using UnityEngine;
 using VContainer;

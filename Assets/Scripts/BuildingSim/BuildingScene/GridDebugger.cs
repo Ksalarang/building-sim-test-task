@@ -1,5 +1,5 @@
 ﻿using Modules.Grids.Runtime;
-using Modules.InputModule.Runtime;
+using Modules.UserInput.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Grid = Modules.Grids.Runtime.Grid;

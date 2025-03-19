@@ -1,6 +1,6 @@
 ﻿using System;
-using Modules.InputModule.Runtime;
 using Modules.UIModule.Runtime.Views;
+using Modules.UserInput.Runtime;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
