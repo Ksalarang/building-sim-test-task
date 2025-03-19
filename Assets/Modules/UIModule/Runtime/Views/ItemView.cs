@@ -1,9 +1,8 @@
-﻿using BuildingSim.BuildingScene.Items;
-using Modules.UtilsModule.Extensions;
+﻿using Modules.UtilsModule.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BuildingSim.BuildingScene.Views
+namespace Modules.UIModule.Runtime.Views
 {
     public class ItemView : MonoBehaviour
     {

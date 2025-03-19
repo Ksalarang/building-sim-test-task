@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace BuildingSim.BuildingScene.Items
+namespace Modules.UIModule.Runtime.Views
 {
     public class BuildableItem : MonoBehaviour
     {

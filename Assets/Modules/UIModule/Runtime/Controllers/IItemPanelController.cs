@@ -1,6 +1,6 @@
-﻿using BuildingSim.BuildingScene.Items;
+﻿using Modules.UIModule.Runtime.Views;
 
-namespace BuildingSim.BuildingScene.Controllers
+namespace Modules.UIModule.Runtime.Controllers
 {
     public interface IItemPanelController
     {

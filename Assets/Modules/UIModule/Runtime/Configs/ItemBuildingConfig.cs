@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using BuildingSim.BuildingScene.Items;
+using Modules.UIModule.Runtime.Views;
 using UnityEngine;
 
-namespace BuildingSim.BuildingScene.Configs
+namespace Modules.UIModule.Runtime.Configs
 {
     [CreateAssetMenu(fileName = "ItemBuildingConfig", menuName = "Configs/ItemBuildingConfig", order = 0)]
     public class ItemBuildingConfig : ScriptableObject

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace BuildingSim.BuildingScene.Views
+namespace Modules.UIModule.Runtime.Views
 {
     public class ItemPanelView : MonoBehaviour
     {

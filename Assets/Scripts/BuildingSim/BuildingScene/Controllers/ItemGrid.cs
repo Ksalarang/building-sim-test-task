@@ -1,6 +1,6 @@
 ﻿using System;
-using BuildingSim.BuildingScene.Items;
 using Modules.GridModule;
+using Modules.UIModule.Runtime.Views;
 using Modules.UtilsModule.Extensions;
 using UnityEngine;
 using VContainer;

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
-using BuildingSim.BuildingScene.Items;
+using Modules.UIModule.Runtime.Views;
 using UnityEngine;
 
-namespace BuildingSim.BuildingScene.Configs
+namespace Modules.UIModule.Runtime.Configs
 {
-    [CreateAssetMenu(fileName = "ItemViewsConfig", menuName = "Configs/ItemViewsConfig", order = 0)]
+    [CreateAssetMenu(fileName = "ItemViewsConfig", menuName = "Modules/UIModule/ItemViewsConfig", order = 0)]
     public class ItemViewsConfig : ScriptableObject
     {
         [field: SerializeField]

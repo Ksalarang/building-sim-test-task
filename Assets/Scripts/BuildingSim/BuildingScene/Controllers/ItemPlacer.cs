@@ -1,8 +1,8 @@
 ﻿using System;
-using BuildingSim.BuildingScene.Configs;
-using BuildingSim.BuildingScene.Items;
-using BuildingSim.BuildingScene.Views;
 using BuildingSim.Input;
+using Modules.UIModule.Runtime.Configs;
+using Modules.UIModule.Runtime.Controllers;
+using Modules.UIModule.Runtime.Views;
 using Modules.UtilsModule.Extensions;
 using UnityEngine;
 using VContainer;

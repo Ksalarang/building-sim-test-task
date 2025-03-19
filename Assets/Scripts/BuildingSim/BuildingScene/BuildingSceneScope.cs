@@ -1,8 +1,9 @@
-﻿using BuildingSim.BuildingScene.Configs;
-using BuildingSim.BuildingScene.Controllers;
-using BuildingSim.BuildingScene.Views;
+﻿using BuildingSim.BuildingScene.Controllers;
 using BuildingSim.Input;
 using Modules.GridModule;
+using Modules.UIModule.Runtime.Configs;
+using Modules.UIModule.Runtime.Controllers;
+using Modules.UIModule.Runtime.Views;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;

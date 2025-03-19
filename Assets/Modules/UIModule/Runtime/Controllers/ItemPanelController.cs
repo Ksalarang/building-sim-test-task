@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Linq;
-using BuildingSim.BuildingScene.Configs;
-using BuildingSim.BuildingScene.Items;
-using BuildingSim.BuildingScene.Views;
+using Modules.UIModule.Runtime.Configs;
+using Modules.UIModule.Runtime.Views;
 using VContainer;
 using VContainer.Unity;
 
-namespace BuildingSim.BuildingScene.Controllers
+namespace Modules.UIModule.Runtime.Controllers
 {
     public class ItemPanelController : IItemPanelController, IInitializable, IDisposable
     {

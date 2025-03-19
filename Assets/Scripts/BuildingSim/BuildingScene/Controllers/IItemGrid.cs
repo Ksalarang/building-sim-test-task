@@ -1,4 +1,4 @@
-﻿using BuildingSim.BuildingScene.Items;
+﻿using Modules.UIModule.Runtime.Views;
 using UnityEngine;
 
 namespace BuildingSim.BuildingScene.Controllers
