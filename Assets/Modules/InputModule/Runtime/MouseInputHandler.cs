@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using VContainer;
 
-namespace BuildingSim.Input
+namespace Modules.InputModule.Runtime
 {
     public class MouseInputHandler : MonoBehaviour, IMouseInput
     {
@@ -25,12 +25,12 @@ namespace BuildingSim.Input
 
         private readonly List<RaycastResult> _raycastResults = new();
 
-        private Controls _controls;
+        private InputControls _controls;
         private Vector3 _mousePosition;
 
         private void Awake()
         {
-            _controls = new Controls();
+            _controls = new InputControls();
         }
 
         private void OnEnable()

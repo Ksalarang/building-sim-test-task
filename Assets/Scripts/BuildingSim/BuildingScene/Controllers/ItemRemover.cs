@@ -1,5 +1,5 @@
 ﻿using System;
-using BuildingSim.Input;
+using Modules.InputModule.Runtime;
 using Modules.UIModule.Runtime.Views;
 using UnityEngine;
 using VContainer;

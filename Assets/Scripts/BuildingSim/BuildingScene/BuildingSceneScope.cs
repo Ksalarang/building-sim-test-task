@@ -1,6 +1,6 @@
 ﻿using BuildingSim.BuildingScene.Controllers;
-using BuildingSim.Input;
 using Modules.GridModule;
+using Modules.InputModule.Runtime;
 using Modules.UIModule.Runtime.Configs;
 using Modules.UIModule.Runtime.Controllers;
 using Modules.UIModule.Runtime.Views;

@@ -1,4 +1,5 @@
 ﻿using Modules.GridModule;
+using Modules.InputModule.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Grid = Modules.GridModule.Grid;
@@ -22,12 +23,12 @@ namespace BuildingSim
         [SerializeField]
         private Transform _cellContainer;
 
-        private Controls _controls;
+        private InputControls _controls;
         private Grid _grid;
 
         private void Awake()
         {
-            _controls = new Controls();
+            _controls = new InputControls();
             _controls.Enable();
             _controls.Building.MouseClick.performed += OnClick;
 

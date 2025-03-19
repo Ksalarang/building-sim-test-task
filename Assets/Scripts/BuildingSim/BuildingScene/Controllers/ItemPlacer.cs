@@ -1,5 +1,5 @@
 ﻿using System;
-using BuildingSim.Input;
+using Modules.InputModule.Runtime;
 using Modules.UIModule.Runtime.Configs;
 using Modules.UIModule.Runtime.Controllers;
 using Modules.UIModule.Runtime.Views;

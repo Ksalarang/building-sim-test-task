@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace BuildingSim.Input
+namespace Modules.InputModule.Runtime
 {
     public interface IMouseInput
     {
