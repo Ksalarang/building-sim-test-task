@@ -29,7 +29,8 @@ namespace Modules.Grids.Runtime
                 return _cells[x, y];
             }
 
-            Debug.LogError($"Position {position} is outside the grid");
+            //todo:
+            // Debug.LogError($"Position {position} is outside the grid");
             return _cells[_gridConfig.GridSize.x / 2, _gridConfig.GridSize.y / 2];
         }
 

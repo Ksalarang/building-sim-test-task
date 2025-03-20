@@ -1463,7 +1463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
-    TypeName: 
+    TypeName: BuildingSim.Bootstrap.BootstrapScope
   autoRun: 1
   autoInjectGameObjects:
   - {fileID: 704616453}
