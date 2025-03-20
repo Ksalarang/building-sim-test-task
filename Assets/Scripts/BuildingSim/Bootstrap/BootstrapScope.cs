@@ -8,7 +8,7 @@ namespace BuildingSim.Bootstrap
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterEntryPoint<SaveManager>();
+            // builder.RegisterEntryPoint<SaveManager>();
         }
     }
 }

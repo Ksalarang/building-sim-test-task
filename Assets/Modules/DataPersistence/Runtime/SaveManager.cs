@@ -1,66 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using VContainer.Unity;
 
 namespace Modules.DataPersistence.Runtime
 {
-    public class SaveManager : ISaveManager, IInitializable, IDisposable
+    public class SaveManager<TData> : ISaveManager<TData>, IInitializable, IDisposable
+        where TData : new()
     {
-        private readonly IDataStorage _dataStorage;
-        private readonly Dictionary<string, string> _dataDict = new();
+        private readonly IDataStorage<TData> _dataStorage;
+        private TData _data;
 
         public SaveManager()
         {
-            _dataStorage = new JsonDataStorage("save.json");
+            _dataStorage = new JsonDataStorage<TData>($"{typeof(TData).Name}.json");
         }
 
         public void Initialize()
         {
-            var saveData = _dataStorage.Load();
-
-            foreach (var pair in saveData.List)
-            {
-                _dataDict.Add(pair.Key, pair.Value);
-            }
+            _data = _dataStorage.Load();
         }
 
         public void Dispose()
         {
-            var saveData = new SaveData();
-
-            saveData.List.AddRange(_dataDict.Select(pair =>
-                new KeyValuePair { Key = pair.Key, Value = pair.Value } ));
-
-            _dataStorage.Save(saveData);
+            _dataStorage.Save(_data);
         }
 
-        public void SetInt(string key, int value)
+        public void SetData(TData data)
         {
-            _dataDict[key] = value.ToString();
+            _data = data;
         }
 
-        public int GetInt(string key, int defaultValue)
+        public TData GetData()
         {
-            if (_dataDict.TryGetValue(key, out var value))
-            {
-                return int.Parse(value);
-            }
-
-            return defaultValue;
+            return _data;
         }
-    }
-
-    [Serializable]
-    public class SaveData
-    {
-        public List<KeyValuePair> List = new();
-    }
-
-    [Serializable]
-    public struct KeyValuePair
-    {
-        public string Key;
-        public string Value;
     }
 }

@@ -1,9 +1,9 @@
 ﻿namespace Modules.DataPersistence.Runtime
 {
-    public interface IDataStorage
+    public interface IDataStorage<TData> where TData : new()
     {
-        void Save(SaveData saveData);
+        void Save(TData data);
 
-        SaveData Load();
+        TData Load();
     }
 }

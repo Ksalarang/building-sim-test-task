@@ -1,9 +1,9 @@
 ﻿namespace Modules.DataPersistence.Runtime
 {
-    public interface ISaveManager
+    public interface ISaveManager<TData> where TData : new()
     {
-        int GetInt(string key, int defaultValue);
+        void SetData(TData data);
 
-        void SetInt(string key, int value);
+        TData GetData();
     }
 }
