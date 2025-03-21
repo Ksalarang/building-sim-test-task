@@ -1,4 +1,5 @@
 ﻿using Modules.DataPersistence.Runtime;
+using Modules.ItemHandling.Runtime;
 using VContainer;
 using VContainer.Unity;
 
@@ -8,7 +9,7 @@ namespace BuildingSim.Bootstrap
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            // builder.RegisterEntryPoint<SaveManager>();
+            builder.RegisterEntryPoint<SaveManager<ItemData>>();
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Modules.DataPersistence.Runtime;
 using Modules.UI.Runtime.Configs;
 using Modules.UI.Runtime.Controllers;
 using Modules.UI.Runtime.Views;
@@ -31,6 +33,9 @@ namespace Modules.ItemHandling.Runtime
         [Inject]
         private readonly Camera _camera;
 
+        [Inject]
+        private readonly ISaveManager<ItemData> _saveManager;
+
         private BuildableItem _currentItem;
 
         public void Initialize()
@@ -44,6 +49,19 @@ namespace Modules.ItemHandling.Runtime
             }
 
             _mouseInput.OnClick += OnClick;
+
+            var itemData = _saveManager.GetData();
+
+            foreach (var gridItem in itemData.Items)
+            {
+                var item = Object.Instantiate(_itemBuildingConfig.GetItem(gridItem.ItemType));
+                item.transform.position = _itemGrid.GetPosition(gridItem.GridPosition);
+
+                if (_itemGrid.PlaceItem(item) == false)
+                {
+                    Debug.LogError($"Failed to place {gridItem.ItemType} at position {gridItem.GridPosition}");
+                }
+            }
         }
 
         public void Dispose()
@@ -114,6 +132,7 @@ namespace Modules.ItemHandling.Runtime
             if (ItemOverlapsUi(_currentItem) == false && _itemGrid.PlaceItem(_currentItem))
             {
                 _currentItem.Renderer.SetAlpha(1f);
+                SaveItem(_currentItem, _itemGrid.GetGridPosition(_currentItem.transform.position));
                 CreateNewItem(_itemPanelController.SelectedItemType);
             }
         }
@@ -145,6 +164,21 @@ namespace Modules.ItemHandling.Runtime
             var uiRect = new Rect(corners[0], corners[2] - corners[0]);
 
             return spriteRect.Overlaps(uiRect);
+        }
+
+        private void SaveItem(BuildableItem item, Vector2Int gridPosition)
+        {
+            var data = _saveManager.GetData();
+            var itemData = data.Items.FirstOrDefault(itemData => itemData.GridPosition == gridPosition);
+
+            if (itemData == null)
+            {
+                data.Items.Add(new GridItem { ItemType = item.Type, GridPosition = gridPosition });
+            }
+            else
+            {
+                itemData.ItemType = item.Type;
+            }
         }
     }
 }

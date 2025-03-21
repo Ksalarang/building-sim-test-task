@@ -23,6 +23,22 @@ namespace Modules.ItemHandling.Runtime
             return _grid.GetClosestCell(position).WorldPosition;
         }
 
+        public Vector3 GetPosition(Vector2Int gridPosition)
+        {
+            if (_grid.TryGetCell(gridPosition.x, gridPosition.y, out var cell))
+            {
+                return cell.WorldPosition;
+            }
+
+            Debug.LogError($"No cell found for position {gridPosition}");
+            return Vector3.zero;
+        }
+
+        public Vector2Int GetGridPosition(Vector3 position)
+        {
+            return _grid.GetClosestCell(position).GridPosition;
+        }
+
         public bool PlaceItem(BuildableItem placedItem)
         {
             var closestPosition = _grid.GetClosestCell(placedItem.transform.position).GridPosition;

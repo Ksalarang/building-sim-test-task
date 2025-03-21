@@ -41,9 +41,16 @@ namespace Modules.Grids.Runtime
             return list;
         }
 
-        public Cell GetCell(int x, int y)
+        public bool TryGetCell(int x, int y, out Cell cell)
         {
-            return _cells[x, y];
+            if (_cells.WithinBounds(x, y))
+            {
+                cell = _cells[x, y];
+                return true;
+            }
+
+            cell = new Cell();
+            return false;
         }
 
         private void CreateCells()

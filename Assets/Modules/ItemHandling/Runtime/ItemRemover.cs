@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Modules.DataPersistence.Runtime;
 using Modules.UI.Runtime.Views;
 using Modules.UserInput.Runtime;
 using UnityEngine;
@@ -18,6 +20,9 @@ namespace Modules.ItemHandling.Runtime
 
         [Inject]
         private readonly ItemGrid _itemGrid;
+
+        [Inject]
+        private readonly ISaveManager<ItemData> _saveManager;
 
         private bool _removing;
 
@@ -60,8 +65,15 @@ namespace Modules.ItemHandling.Runtime
                 if (_itemGrid.RemoveItem(item))
                 {
                     Object.Destroy(item.gameObject);
+                    DeleteItemFromSave(_itemGrid.GetGridPosition(item.transform.position));
                 }
             }
+        }
+
+        private void DeleteItemFromSave(Vector2Int gridPosition)
+        {
+            var itemData = _saveManager.GetData();
+            itemData.Items.RemoveAll(item => item.GridPosition == gridPosition);
         }
     }
 }
