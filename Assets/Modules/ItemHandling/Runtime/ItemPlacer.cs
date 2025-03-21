@@ -42,39 +42,26 @@ namespace Modules.ItemHandling.Runtime
         {
             _itemPanelView.PlaceButton.onClick.AddListener(OnPlaceButtonClick);
             _itemPanelView.RemoveButton.onClick.AddListener(OnRemoveButtonClick);
+            _mouseInput.OnClick += OnClick;
 
             foreach (var itemView in _itemPanelView.Items)
             {
                 itemView.Button.onClick.AddListener(() => OnItemViewClick(itemView));
             }
 
-            _mouseInput.OnClick += OnClick;
-
-            var itemData = _saveManager.GetData();
-
-            foreach (var gridItem in itemData.Items)
-            {
-                var item = Object.Instantiate(_itemBuildingConfig.GetItem(gridItem.ItemType));
-                item.transform.position = _itemGrid.GetPosition(gridItem.GridPosition);
-
-                if (_itemGrid.PlaceItem(item) == false)
-                {
-                    Debug.LogError($"Failed to place {gridItem.ItemType} at position {gridItem.GridPosition}");
-                }
-            }
+            LoadItemsFromSave();
         }
 
         public void Dispose()
         {
             _itemPanelView.PlaceButton.onClick.RemoveListener(OnPlaceButtonClick);
             _itemPanelView.RemoveButton.onClick.RemoveListener(OnRemoveButtonClick);
+            _mouseInput.OnClick -= OnClick;
 
             foreach (var itemView in _itemPanelView.Items)
             {
                 itemView.Button.onClick.RemoveAllListeners();
             }
-
-            _mouseInput.OnClick -= OnClick;
         }
 
         public void Tick()
@@ -164,6 +151,22 @@ namespace Modules.ItemHandling.Runtime
             var uiRect = new Rect(corners[0], corners[2] - corners[0]);
 
             return spriteRect.Overlaps(uiRect);
+        }
+
+        private void LoadItemsFromSave()
+        {
+            var itemData = _saveManager.GetData();
+
+            foreach (var gridItem in itemData.Items)
+            {
+                var item = Object.Instantiate(_itemBuildingConfig.GetItem(gridItem.ItemType));
+                item.transform.position = _itemGrid.GetPosition(gridItem.GridPosition);
+
+                if (_itemGrid.PlaceItem(item) == false)
+                {
+                    Debug.LogError($"Failed to place {gridItem.ItemType} at position {gridItem.GridPosition}");
+                }
+            }
         }
 
         private void SaveItem(BuildableItem item, Vector2Int gridPosition)

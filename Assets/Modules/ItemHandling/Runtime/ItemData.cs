@@ -16,10 +16,5 @@ namespace Modules.ItemHandling.Runtime
     {
         public BuildableItemType ItemType;
         public Vector2Int GridPosition;
-
-        public override string ToString()
-        {
-            return $"{ItemType} at {GridPosition}";
-        }
     }
 }
