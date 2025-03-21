@@ -119,6 +119,7 @@ namespace Modules.ItemHandling.Runtime
             if (ItemOverlapsUi(_currentItem) == false && _itemGrid.PlaceItem(_currentItem))
             {
                 _currentItem.Renderer.SetAlpha(1f);
+                _currentItem.Renderer.sortingOrder = 0;
                 SaveItem(_currentItem, _itemGrid.GetGridPosition(_currentItem.transform.position));
                 CreateNewItem(_itemPanelController.SelectedItemType);
             }
@@ -128,6 +129,7 @@ namespace Modules.ItemHandling.Runtime
         {
             _currentItem = Object.Instantiate(_itemBuildingConfig.GetItem(type));
             _currentItem.Renderer.SetAlpha(_itemBuildingConfig.PrePlacedItemAlpha);
+            _currentItem.Renderer.sortingOrder = 10;
             _currentItem.transform.position = _itemGrid.GetPositionClosestTo(_mouseInput.Position);
         }
 
